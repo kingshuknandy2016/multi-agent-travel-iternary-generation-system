@@ -1,0 +1,20 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 60
+    },
+    "auditLog": "C:\\Users\\Kingshuk\\kingshuk_drive\\AI\\multi-agent-travel-itinerary-generation-system\\logs\\.f913da1a739b6c5901fd453d55a471135d84e6ff-audit.json",
+    "files": [
+        {
+            "date": 1734007661480,
+            "name": "C:\\Users\\Kingshuk\\kingshuk_drive\\AI\\multi-agent-travel-itinerary-generation-system\\logs\\application-12-12-2024-logs.log",
+            "hash": "76aee50482a7eb972e0b277cbb2dba12901a4f44a623e7c414b0833a349c02ce"
+        },
+        {
+            "date": 1734468201636,
+            "name": "C:\\Users\\Kingshuk\\kingshuk_drive\\AI\\multi-agent-travel-itinerary-generation-system\\logs\\application-18-12-2024-logs.log",
+            "hash": "833d866c04e03c803f9840507011586adde6a9f17f9aafbe148125da4ab3e00b"
+        }
+    ],
+    "hashType": "sha256"
+}

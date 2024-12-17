@@ -1,0 +1,15 @@
+{
+  "recommendedAdjustments": [
+    {
+      "type": "DESTINATION_REFINEMENT",
+      "suggestion": "Consider alternative nearby locations",
+      "confidenceLevel": 0.7
+    },
+    {
+      "type": "ACTIVITY_OPTIMIZATION",
+      "suggestion": "Allocate more time for local cultural experiences",
+      "confidenceLevel": 0.8
+    }
+  ],
+  "confidenceScore": 0.75
+}
