@@ -1,18 +1,22 @@
 # 🌍 Travel Itinerary Generation System
 
-![CI](https://github.com/kingshuknandy2016/multi-agent-travel-iternary-generation-system/actions/workflows/ci.yml/badge.svg)
-
 <div align="center">
-  <img src="./images/functionalOverview.png" alt="Functional Overview" width="800px">
-  
-  <p>
-    <a href="#quick-start">Quick Start</a> •
-    <a href="#core-modules">Core Modules</a> •
-    <a href="#specialized-agents">Specialized Agents</a> •
-    <a href="#code-workflow">Workflow</a> •
-    <a href="#sample-output">Sample Output</a> •
-    <a href="#technology-stack">Tech Stack</a>
-  </p>
+
+[![CI](https://github.com/kingshuknandy2016/multi-agent-travel-iternary-generation-system/actions/workflows/ci.yml/badge.svg)](https://github.com/kingshuknandy2016/multi-agent-travel-iternary-generation-system/actions/workflows/ci.yml)
+
+<sub>GitHub Actions: Node 20 · <code>npm ci</code> · <code>npm run build</code> (<code>tsc</code>) — see <a href=".github/workflows/ci.yml"><code>.github/workflows/ci.yml</code></a></sub>
+
+<img src="./images/functionalOverview.png" alt="Functional Overview" width="800px">
+
+<p>
+  <a href="#quick-start">Quick Start</a> •
+  <a href="#core-modules">Core Modules</a> •
+  <a href="#specialized-agents">Specialized Agents</a> •
+  <a href="#code-workflow">Workflow</a> •
+  <a href="#sample-output">Sample Output</a> •
+  <a href="#technology-stack">Tech Stack</a>
+</p>
+
 </div>
 
 ## Quick Start
