@@ -1,4 +1,4 @@
-<img width="1408" height="768" alt="Gemini_Generated_Image_3niq6x3niq6x3niq (1)" src="https://github.com/user-attachments/assets/8a9cc809-40f4-4bfa-9208-a755e195bff3" />
+
 # 🌍 Travel Itinerary Generation System
 
 <div align="center">
@@ -8,7 +8,7 @@
 <sub>GitHub Actions: Node 20 · <code>npm ci</code> · <code>npm run build</code> (<code>tsc</code>) — see <a href=".github/workflows/ci.yml"><code>.github/workflows/ci.yml</code></a></sub>
 
 <img src="./images/functionalOverview.png" alt="Functional Overview" width="800px">
-
+<img width="1408" height="768" alt="Gemini_Generated_Image_3niq6x3niq6x3niq (1)" src="https://github.com/user-attachments/assets/8a9cc809-40f4-4bfa-9208-a755e195bff3" />
 <p>
   <a href="#quick-start">Quick Start</a> •
   <a href="#core-modules">Core Modules</a> •
