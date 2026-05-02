@@ -1,15 +1,29 @@
 # 🌍 Travel Itinerary Generation System
 
+![CI](https://github.com/kingshuknandy2016/multi-agent-travel-iternary-generation-system/actions/workflows/ci.yml/badge.svg)
+
 <div align="center">
   <img src="./images/functionalOverview.png" alt="Functional Overview" width="800px">
   
   <p>
+    <a href="#quick-start">Quick Start</a> •
     <a href="#core-modules">Core Modules</a> •
     <a href="#specialized-agents">Specialized Agents</a> •
     <a href="#code-workflow">Workflow</a> •
+    <a href="#sample-output">Sample Output</a> •
     <a href="#technology-stack">Tech Stack</a>
   </p>
 </div>
+
+## Quick Start
+
+```bash
+git clone https://github.com/kingshuknandy2016/multi-agent-travel-iternary-generation-system
+cd multi-agent-travel-iternary-generation-system
+cp .env.example .env   # add your OPENAI_API_KEY
+npm install
+npm run start
+```
 
 ## 🎯 Overview
 
@@ -34,11 +48,17 @@ A sophisticated orchestration layer that manages inter-agent communications and 
 - Sequential travel planning pipeline
 </details>
 
-```javascript
-// Example Configuration
-export class AgentCollaborationFramework {
-  // ... existing code ...
-}
+```typescript
+// Excerpt from src/main.ts — register agents with the collaboration framework
+const collaborationFramework = new AgentCollaborationFramework();
+const apiKey = process.env.OPENAI_API_KEY || "";
+
+collaborationFramework.registerAgent("validation", new PreferencesValidationAgent(apiKey));
+collaborationFramework.registerAgent("research", new DestinationResearchAgent(apiKey));
+collaborationFramework.registerAgent("generation", new ItineraryGenerationAgent(apiKey));
+collaborationFramework.registerAgent("riskMitigation", new RiskMitigationAgent(apiKey));
+collaborationFramework.registerAgent("budgetOptimization", new BudgetOptimizationAgent(apiKey));
+collaborationFramework.registerAgent("localExperience", new LocalExperienceAgent(apiKey));
 ```
 
 ### 2. Learning Module 🧠
@@ -138,6 +158,141 @@ An intelligent system component that continuously evolves based on real-world fe
    - Cost breakdown
    - Local recommendations
 
+## Sample Output
+
+Runs write a collaboration payload to `output/travel-plans/collaboration-result.json`. Shape: top-level `finalOutput` (merged trip plan) and `stageResults` (per-agent outputs in pipeline order).
+
+**Input:** "5 days in Kyoto, Japan · Budget $1500 · Focus: culture + food"
+
+**Output excerpt** (abbreviated; full files include every day and complete lists):
+
+```json
+{
+  "finalOutput": {
+    "destination": "Kyoto, Japan",
+    "travelDates": { "start": "2025-06-01", "end": "2025-06-05" },
+    "travelerCount": 2,
+    "budget": 1500,
+    "interests": ["culture", "food"],
+    "travelStyle": "cultural",
+    "validationResult": {
+      "feasibilityScore": 88,
+      "potentialChallenges": ["Peak season crowds at major temples"],
+      "recommendationFlags": ["Visit Fushimi Inari early morning to avoid crowds"]
+    },
+    "researchResult": {
+      "seasonalConditions": "Early June: warm, occasional rain; hydrangea season.",
+      "culturalOpportunities": [
+        "Temples and shrines in Higashiyama",
+        "Kaiseki and Nishiki Market street food"
+      ],
+      "hiddenGemLocations": [
+        "Otagi Nenbutsu-ji",
+        "Philosopher's Path side alleys"
+      ],
+      "riskAssessment": "Very safe; stay hydrated in summer heat.",
+      "budgetStrategies": ["IC card + local buses", "Set menus at lunch"],
+      "uniqueExperiences": ["Tea ceremony", "Evening walk in Gion"]
+    },
+    "generationResult": {
+      "destination": "Kyoto, Japan",
+      "totalDays": 5,
+      "dailyActivities": [
+        {
+          "day": 1,
+          "activities": [
+            "Fushimi Inari Shrine (early)",
+            "Nishiki Market lunch",
+            "Gion evening stroll"
+          ],
+          "estimatedCost": 120
+        },
+        {
+          "day": 2,
+          "activities": [
+            "Arashiyama bamboo grove",
+            "Tenryu-ji gardens",
+            "Cooking class (local recommendation)"
+          ],
+          "estimatedCost": 185
+        }
+      ]
+    },
+    "riskMitigationResult": {
+      "riskProbabilities": {
+        "earthquakes": 0.35,
+        "typhoons": 0.15,
+        "crime": 0.05
+      },
+      "mitigationStrategies": [
+        "Travel insurance covering natural disasters"
+      ],
+      "backupPlans": [
+        "Indoor temple/museum alternatives if heavy rain"
+      ]
+    }
+  },
+  "stageResults": [
+    {
+      "feasibilityScore": 88,
+      "potentialChallenges": ["Peak season crowds at major temples"],
+      "recommendationFlags": ["Visit Fushimi Inari early morning to avoid crowds"]
+    },
+    {
+      "seasonalConditions": "Early June: warm, occasional rain; hydrangea season.",
+      "culturalOpportunities": [
+        "Temples and shrines in Higashiyama",
+        "Kaiseki and Nishiki Market street food"
+      ],
+      "hiddenGemLocations": [
+        "Otagi Nenbutsu-ji",
+        "Philosopher's Path side alleys"
+      ],
+      "riskAssessment": "Very safe; stay hydrated in summer heat.",
+      "budgetStrategies": ["IC card + local buses", "Set menus at lunch"],
+      "uniqueExperiences": ["Tea ceremony", "Evening walk in Gion"]
+    },
+    {
+      "destination": "Kyoto, Japan",
+      "totalDays": 5,
+      "dailyActivities": [
+        {
+          "day": 1,
+          "activities": [
+            "Fushimi Inari Shrine (early)",
+            "Nishiki Market lunch",
+            "Gion evening stroll"
+          ],
+          "estimatedCost": 120
+        },
+        {
+          "day": 2,
+          "activities": [
+            "Arashiyama bamboo grove",
+            "Tenryu-ji gardens",
+            "Cooking class (local recommendation)"
+          ],
+          "estimatedCost": 185
+        }
+      ]
+    },
+    {
+      "riskProbabilities": {
+        "earthquakes": 0.35,
+        "typhoons": 0.15,
+        "crime": 0.05
+      },
+      "mitigationStrategies": [
+        "Travel insurance covering natural disasters"
+      ],
+      "backupPlans": [
+        "Indoor temple/museum alternatives if heavy rain"
+      ]
+    }
+  ]
+}
+```
+
 ## 🛠️ Technology Stack
 
 <div align="center">
@@ -148,13 +303,15 @@ An intelligent system component that continuously evolves based on real-world fe
 
 </div>
 
-## 🚀 Recommended Enhancements
+## 🗺️ Roadmap
 
-- [ ] Implement Redis caching layer
-- [ ] Add comprehensive error handling
-- [ ] Create MongoDB storage for insights
-- [ ] Develop TensorFlow feedback loop
-- [ ] Integrate real-time travel APIs
+Directional enhancements under consideration—not a backlog of unfinished core features:
+
+- **Caching** — Redis (or similar) for repeated destination research and LLM response memoization
+- **Resilience** — Broader error handling, retries, and degraded modes when upstream APIs fail
+- **Persistence** — MongoDB or another store for learning-module insights and historical plans
+- **Feedback loop** — TensorFlow or classical models on top of recorded travel outcomes
+- **Live data** — Real-time travel APIs (flights, weather, events) layered onto generated itineraries
 
 ## 📝 Contributing
 
