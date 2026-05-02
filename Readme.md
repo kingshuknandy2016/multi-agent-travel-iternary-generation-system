@@ -1,3 +1,4 @@
+<img width="1408" height="768" alt="Gemini_Generated_Image_3niq6x3niq6x3niq (1)" src="https://github.com/user-attachments/assets/8a9cc809-40f4-4bfa-9208-a755e195bff3" />
 # 🌍 Travel Itinerary Generation System
 
 <div align="center">
